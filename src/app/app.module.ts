@@ -10,8 +10,10 @@ import {  MatToolbarModule } from '@angular/material/toolbar';
 import {  MatSidenavModule } from '@angular/material/sidenav';
 import {  MatListModule } from '@angular/material/list';
 import { LoginModule } from './login/login.module';
-import {MatCardModule} from '@angular/material/card';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     LoginModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

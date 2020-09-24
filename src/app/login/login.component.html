@@ -1,5 +1,44 @@
-<p>login works!</p>
-<mat-card>Simple card
 
-</mat-card>
+<ng-container *ngIf="!loading">
+<mat-grid-list class="mat-grid" cols="3" rowHeight="1:1">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile><mat-card>
+    <mat-card-title title="Login Page">Login Page</mat-card-title>
+  <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" >
+    <br>
+    <mat-form-field>
+      <mat-label>Add the Username </mat-label>
+      <input matInput placeholder="Username" formControlName="user">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Add the Username </mat-label>
+      <input matInput placeholder="password" formControlName="password">
+    </mat-form-field>
+    <br>
+    <button mat-flat-button color="primary" [disabled]="formLogin.invalid">Primary</button>
+    <br>
+    <div *ngIf="errorValidation">
+      <span class="error-message">
+        The user does not exist
+      </span>
+    </div>
+  </form>
+  </mat-card></mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+  <div>
+    Note: if you want to be admin, need to access with= username: Marco and password 12345
+    <br>
+    If you want to be a normal user need to access with= username: Abril and password 12345
+  </div>
+</mat-grid-list>
 
+</ng-container>
+<ng-container *ngIf="loading">
+  <mat-grid-list class="mat-grid" cols="3" rowHeight="1:1">
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile>
+    <img src="../../assets//loading.gif">
+  </mat-grid-tile>
+</mat-grid-list>
+</ng-container>
